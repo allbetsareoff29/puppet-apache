@@ -1,8 +1,9 @@
-# @summary A short summary of the purpose of this class
+# @summary Main Entry to module
 #
-# A description of what this class does
+# Main Entry to module
 #
 # @example
 #   include apache
 class apache {
+  include apache::install
 }
