@@ -3,7 +3,13 @@
 # A description of what this defined type does
 #
 # @example
-#   apache::vhosts { 'namevar': }
+#   apache::vhosts { 'namevar': 
+#     port      => Integer
+#     subdomain => String[1]
+#     admin     => String
+#     docroot   => String[1]
+#   }
+
 define apache::vhosts (
   Integer   $port,
   String[1] $subdomain,
