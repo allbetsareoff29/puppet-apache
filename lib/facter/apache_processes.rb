@@ -7,5 +7,6 @@ Facter.add(:apache_processes) do
 			Facter::Core::Execution.execute('pgrep apache2 | wc -l')
 		when 'RedHat'
 			Facter::Core::Execution.execute('pgrep httpd | wc -l')
+		end
 	end
 end
