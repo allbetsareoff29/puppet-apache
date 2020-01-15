@@ -1,0 +1,15 @@
+steps:
+  - task: apache::ctl
+    target: allbetsareoff292c.mylabserver.com
+    description: "Shuts down Apache service"
+    parameters:
+      command: graceful-stop
+  - command: "cp /etc/httpd/logs/access_log /tmp/apache_access"
+    target: allbetsareoff292c.mylabserver.com
+    description: "Create snapshop of apache log files"
+  - task: package
+    target: allbetsareoff292c.mylabserver.com
+    description: "Uninstall Apache"
+    parameters:
+      action: uninstall
+      name: httpd
